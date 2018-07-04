@@ -12,9 +12,9 @@ public class View {
     public static final String BIG = "Your number is GREATER";
     public static final String LESS = "Your number is LESS";
     public static final String EXIT = "exit";
-    public static final String messageToExit = "Enter 'exit' If you want to exit";
-    public static final String messageToContinued = "Enter anything If you want to continue";
-    public static final String Statistics = "Your statistics: ";
+    public static final String MESSAGE_TO_EXIT = "Enter 'exit' If you want to exit";
+    public static final String MESSAGE_TO_CONTINUE = "Enter anything If you want to continue";
+    public static final String STATISTICS = "Your statistics: ";
 
     public void printMessage(String message){
         System.out.println(message);

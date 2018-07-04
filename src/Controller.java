@@ -21,11 +21,11 @@ public class Controller {
         model.setMaxBarrier(100);
         model.setValue(inputIntValueWithScannerAndDiapason(sc));
         view.printMessage(View.OUR_INT + model.getValue());
-        view.printMessage(View.Statistics + Arrays.asList(arrayInt));
+        view.printMessage(View.STATISTICS + Arrays.asList(arrayInt));
 
         while (true){
-            view.printMessage(View.messageToExit);
-            view.printMessage(View.messageToContinued);
+            view.printMessage(View.MESSAGE_TO_EXIT);
+            view.printMessage(View.MESSAGE_TO_CONTINUE);
 
             if(sc.next().equals(View.EXIT)){
                 break;
@@ -39,7 +39,7 @@ public class Controller {
             model.setMaxBarrier(max);
             model.setValue(inputIntValueWithScannerAndDiapason(sc));
             view.printMessage(View.OUR_INT + model.getValue());
-            view.printMessage(View.Statistics + Arrays.asList(arrayInt));
+            view.printMessage(View.STATISTICS + Arrays.asList(arrayInt));
         }
     }
     // The Utility methods
