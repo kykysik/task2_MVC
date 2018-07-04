@@ -24,6 +24,7 @@ public class Controller {
         view.printMessage(View.STATISTICS + Arrays.asList(arrayInt));
 
         while (true){
+
             view.printMessage(View.MESSAGE_TO_EXIT);
             view.printMessage(View.MESSAGE_TO_CONTINUE);
 
@@ -56,7 +57,23 @@ public class Controller {
         view.printMessage(View.INPUT_RAND +
                 model.getMinBarrier()+ View.SPACE + model.getMaxBarrier());
 
+        // Checks the input data of correct and add to statistics.
         while( true ) {
+
+            if(model.getMinBarrier() > model.getMaxBarrier()) {
+
+                view.printMessage(View.EXCEPTION);
+                view.printMessage(View.INPUT_MIN_DATA);
+                int min = sc.nextInt();
+                view.printMessage(View.INPUT_MAX_DATA);
+                int max = sc.nextInt();
+                model.setMinBarrier(min);
+                model.setMaxBarrier(max);
+                rand_INT = rand(model.getMinBarrier(), model.getMaxBarrier());
+                view.printMessage(View.INPUT_RAND +
+                        model.getMinBarrier()+ View.SPACE + model.getMaxBarrier());
+            }
+
             while (!sc.hasNextInt()) {
                 view.printMessage(View.WRONG_INPUT_DATA
                         + View.INPUT_RAND);
@@ -73,7 +90,7 @@ public class Controller {
 
             arrayInt.add(res);
             if(res > rand_INT){
-                view.printMessage(View.BIG);
+                view.printMessage(View.HIGHER);
             } else if (res < rand_INT) {
                 view.printMessage(View.LESS);
             }else {
