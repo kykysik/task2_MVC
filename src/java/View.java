@@ -1,3 +1,5 @@
+package java;
+
 public class View {
     // Text's constants
     public static final String INPUT_RAND = "Value : ";
@@ -12,13 +14,12 @@ public class View {
     public static final String HIGHER = "Your number is HIGHER";
     public static final String LESS = "Your number is LESS";
     public static final String EXIT = "exit";
-    public static final String EXCEPTION = "Min argument can't be higher than Max. Try again.";
     public static final String MESSAGE_TO_EXIT = "Enter 'exit' If you want to exit";
     public static final String MESSAGE_TO_CONTINUE = "Enter anything If you want to continue";
     public static final String STATISTICS = "Your statistics: ";
+    public static final String NOT_NUM = "It's not a number. Try again.";
 
     public void printMessage(String message){
         System.out.println(message);
     }
-
 }

@@ -1,7 +1,15 @@
-public class Model {
+package java;
+
+import java.io.Serializable;
+
+public class Model implements Serializable {
     private int value;
-    private int min;
-    private int max;
+    private int min = 0;
+    private int MAX_RAND = 100;
+
+    Model(){
+        super();
+    }
 
     public int getValue() {
         return value;
@@ -20,10 +28,10 @@ public class Model {
     }
 
     public int getMaxBarrier() {
-        return max;
+        return MAX_RAND;
     }
 
     public void setMaxBarrier(int max) {
-        this.max = max;
+        this.MAX_RAND = max;
     }
 }
