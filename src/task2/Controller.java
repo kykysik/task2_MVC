@@ -1,4 +1,4 @@
-package java;
+package task2;
 
 import java.util.Scanner;
 
@@ -46,6 +46,7 @@ public class Controller {
             while (services.testOnCorrectValue(res)){
                 view.printMessage(View.WRONG_RANGE_DATA);
                 res = Integer.parseInt(sc.next());
+
             }
 
             if (res == services.getRand_INT()) {
@@ -53,9 +54,11 @@ public class Controller {
                 break;
 
             } else if (services.higherOrLess(res)) {
+                System.out.println("KEK" + services.getRand_INT());
+
                 view.printMessage(View.LESS);
             } else {
-
+                System.out.println("KEK" + services.getRand_INT());
                 view.printMessage(View.HIGHER);
             }
         }

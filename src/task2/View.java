@@ -1,4 +1,4 @@
-package java;
+package task2;
 
 public class View {
     // Text's constants

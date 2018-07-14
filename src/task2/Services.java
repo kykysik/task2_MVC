@@ -1,4 +1,4 @@
-package java;
+package task2;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,8 @@ public class Services {
     private static ArrayList arrayInt = new ArrayList();
     private static int rand_INT;
 
-    Services(){
+    Services(Model model){
+        this.model = model;
         rand_INT = rand(model.getMinBarrier(), model.getMaxBarrier());
         model.setValue(rand_INT);
     }
@@ -63,7 +64,7 @@ public class Services {
 
     public int rand(int min, int max) {
 
-        return  (int) (Math.random() * ++max) + min;
+        return  (int) (Math.random() * (max-min)+1) + min;
     }
 
     public void minMax(int min, int max) {
