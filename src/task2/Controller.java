@@ -1,14 +1,14 @@
 package java;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller {
     private Services services;
     private View view;
-    private static ArrayList arrayInt = new ArrayList();
+    private Model model;
 
-    public Controller(Services services, View view) {
+    public Controller(Model model, Services services, View view) {
+        this.model = model;
         this.services = services;
         this.view = view;
     }
@@ -16,7 +16,7 @@ public class Controller {
     public void proc(){
         Scanner sc = new Scanner(System.in);
         view.printMessage(View.GO);
-        view.printMessage(services.defMin + View.SPACE + services.defMax);
+        view.printMessage(model.getMinBarrier() + View.SPACE + model.getMaxBarrier());
         wrongInput(sc);
         while (true) {
             view.printMessage(View.MESSAGE_TO_EXIT);
@@ -26,7 +26,7 @@ public class Controller {
             }
 
             inputMinMax(sc);
-            System.out.println("Время угадывать.");
+            view.printMessage(View.GO);
             wrongInput(sc);
 
         }
@@ -53,10 +53,8 @@ public class Controller {
                 break;
 
             } else if (services.higherOrLess(res)) {
-                System.out.println("KEK: " + services.getRand_INT());
                 view.printMessage(View.LESS);
             } else {
-                System.out.println("KEK: " + services.getRand_INT());
 
                 view.printMessage(View.HIGHER);
             }
@@ -83,7 +81,7 @@ public class Controller {
 
         services.minMax(min, max);
 
-        view.printMessage(services.defMin + View.SPACE + services.defMax);
+        view.printMessage(model.getMinBarrier() + View.SPACE + model.getMaxBarrier());
 
     }
 

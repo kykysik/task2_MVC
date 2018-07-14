@@ -3,9 +3,8 @@ package java;
 import java.util.ArrayList;
 
 public class Services {
-    private Model model = new Model();
-    int defMin;
-    int defMax;
+    private Model model;
+
 
 
     private static ArrayList arrayInt = new ArrayList();
@@ -14,8 +13,6 @@ public class Services {
     Services(){
         rand_INT = rand(model.getMinBarrier(), model.getMaxBarrier());
         model.setValue(rand_INT);
-        defMin = model.getMinBarrier();
-        defMax = model.getMaxBarrier();
     }
 
     public void setRadnom(){
@@ -73,13 +70,8 @@ public class Services {
 
         model.setMinBarrier(min);
         model.setMaxBarrier(max);
-
-        defMin = model.getMinBarrier();
-        defMax = model.getMaxBarrier();
         setArrayInt();
         setRadnom();
-        rand_INT = rand(model.getMinBarrier(), model.getMaxBarrier());
-        model.setValue(rand_INT);
     }
 
 }
